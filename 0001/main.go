@@ -9,13 +9,13 @@ func main() {
 }
 
 func twoSum(nums []int, target int) []int {
-	m := make(map[int]int)
+	hashMap := make(map[int]int)
 	for i, num := range nums {
-		compliment := target - num
-		if v, ok := m[compliment]; ok {
+		diff := target - num
+		if v, ok := hashMap[diff]; ok {
 			return []int{v, i}
 		}
-		m[num] = i
+		hashMap[num] = i
 	}
 	return nil
 }
